@@ -32,7 +32,7 @@ const setSprite = (sprite) => {
     document.getElementById("pokemon").src = sprite;
 }
 
-setInterval(getPokemon, 3000);
+setInterval(getPokemon, 30000);
 window.onload = async function() {
     getPokemon();
 };
