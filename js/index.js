@@ -10,7 +10,15 @@ const random = () => {
 }
 
 const updateInfo = (pokemon) => {
-    document.getElementById('info').innerHTML = `<h4><span class="badge">${pokemon.id}</span></h4><h1>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>`
+    types = []
+    pokemon.types.forEach(slot => {
+        types.push(slot.type.name)
+    });
+    str = types.join().replace(",", "/");
+    document.getElementById('info').innerHTML = `
+    <h4><span class="badge">${pokemon.id}</span></h4>
+    <h3><span class="badge">${str}</span></h3>
+    <h1>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>`
 }
 
 const getPokemon = async () => {
